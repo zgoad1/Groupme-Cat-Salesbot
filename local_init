@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DIR=~/Documents/GitHub/stuart-robot-boy
+
+# Handle no args
+if (( $# == 0 ))
+then
+	echo "Need argument for commit message. Aborting."
+	exit 1
+fi
+
+echo "Updating repo, committing with message \"$1\", and pushing"
+git add $DIR && git commit -m "$1" && git push heroku master
+
