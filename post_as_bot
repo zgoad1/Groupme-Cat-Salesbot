@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BOT_ID=$(cat ./bot_id.txt)
+URL="https://api.groupme.com/v3/bots/post?bot_id=$BOT_ID&text=${1// /+}"
+
+echo "Posting \"$1\" to $URL"
+curl -X POST "$URL"
+echo
